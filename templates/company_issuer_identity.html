@@ -1,45 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Talao Professional Identity</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Contact-Form-Clean.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Login-Form-Clean.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='material-icons.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Article-Cards.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome5-overrides.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ionicons.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Footer-Clean.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='carousel.css') }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-
-<body id="page-top">
-  <div id="wrapper">
-    <div class="d-flex flex-column" id="content-wrapper">
-      <div id="content">
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-        <div class="alert alert-{{ category }} alert-dismissible fade show m-0" role="alert">
-          <span>{{ message }}</span>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-
         {% if session['type'] == "company" %}
         {% include 'company_nav_bar.html' %}
         {% else %}
@@ -111,15 +69,14 @@
                     <div class="row m-2">
                       {% if in_referent_list %}
                       <div class="col p-0 text-center">
-                        <a href="/user/issue_certificate/?goback=/user/issuer_explore/?issuer_username={{issuer_username}}" >
+                        <a href="/user/issue_certificate/?goback=/user/issuer_explore/?issuer_username={{issuer_username}}">
                           <button class="btn btn-primary py-0 w-100" title="" type="button" style="background: rgba(11,69,128,0.93);color: white;font-size: 16px;border-color: rgba(11,69,128,0.93);height: 50px;">
                             Issue a Certificate</button>
                         </a>
                       </div>
                       {% else %}
                       <div class="col p-0 text-center">
-                        <button class="btn btn-primary py-0 w-100" title="You are not in this company Referent list" type="button"
-                          style="background: rgba(0,123,255,0);color: #c9c9c9;font-size: 15px;border-color: #c9c9c9;height: 50px;">
+                        <button class="btn btn-primary py-0 w-100" title="You are not in this company Referent list" type="button" style="background: rgba(0,123,255,0);color: #c9c9c9;font-size: 15px;border-color: #c9c9c9;height: 50px;">
                           Issue a Certificate</button>
                       </div>
                       {% endif %}
@@ -193,8 +150,7 @@
                       {% if white_list %}
 
                       <div class="col-9 p-0 w-100">
-                        <button class="btn btn-primary py-0" title="Your Whitelist is made up of issuers you rely on" type="button"
-                          style="background: rgba(0,193,0,0.8);color: white;font-size: 16px;border-color: rgba(0,193,0,0.8);height: 50px;">
+                        <button class="btn btn-primary py-0" title="Your Whitelist is made up of issuers you rely on" type="button" style="background: rgba(0,193,0,0.8);color: white;font-size: 16px;border-color: rgba(0,193,0,0.8);height: 50px;">
                           This company is in your <strong> White List</strong></button>
                       </div>
                       <div class="col ml-2 p-0 text-right">
@@ -368,26 +324,26 @@
             <!-- /.Col carousels -->
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
+        </div>
+        </div>
+        </div>
+        </div>
 
 
-  {% include 'user_footer.html' %}
+        {% include 'user_footer.html' %}
 
-  </div>
-  </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
-  <script src="{{ url_for('static', filename='chart.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='bs-init.js') }}"></script>
-  <script src="{{ url_for('static', filename='theme.js') }}"></script>
-  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-  <script>
-    function goBack() {
-      window.history.back();
-    }
-  </script>
-</body>
+        </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+        <script src="{{ url_for('static', filename='chart.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bs-init.js') }}"></script>
+        <script src="{{ url_for('static', filename='theme.js') }}"></script>
+        <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+        </body>
 
-</html>
+        </html>
